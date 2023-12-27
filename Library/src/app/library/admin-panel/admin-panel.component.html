@@ -1,0 +1,77 @@
+<div class="container">
+    <mat-card>
+        <mat-tab-group>
+            <mat-tab label="User">
+
+                <div class="user-selection">
+                    <button mat-raised-button (click)="searchUserOpen()">
+                        Search user
+                    </button>
+
+                    <div>
+                        <span>Selected user:
+                            <span *ngIf="user == null; else userSelected">
+                                none
+                            </span>
+
+                            <ng-template #userSelected>
+                                <span>
+                                    {{user.login}}
+                                </span>
+                            </ng-template>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="expansion-panel">
+                    <mat-accordion multi>
+                        <mat-expansion-panel [disabled]="user==null">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Permissions
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Change user's permissions
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+
+                            <div *ngIf="user">Current role: {{user.role}}</div>
+
+                            <mat-form-field appearance="fill" *ngIf="user">
+                                <mat-label>Choose role</mat-label>
+                                <mat-select [(ngModel)]="selectedRole">
+                                    <ng-container *ngFor="let role of roles | keyvalue">
+                                        <mat-option *ngIf="role.key != user.role" [value]="role">{{role.key}}</mat-option>
+                                    </ng-container>
+                                </mat-select>
+                            </mat-form-field>
+                            <div>
+                                <button mat-raised-button (click)="changeUserRole(user.id, selectedRole)">Change role</button>
+                            </div>
+
+                        </mat-expansion-panel>
+
+                        <mat-expansion-panel [disabled]="user==null">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Account Status
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Change user's account status
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div *ngIf="user">
+                                Status:
+                                <span [innerHTML] = "user.isActive | accountStatus"></span>
+                            </div>
+                            <button mat-raised-button (click)="changeUserAccountStatus(user.id)">
+                                Change account status
+                            </button>
+                        </mat-expansion-panel>
+
+                    </mat-accordion>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>

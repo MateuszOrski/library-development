@@ -1,0 +1,93 @@
+<div class="container">
+
+<div class="left"></div>
+
+    <div class="mid">
+
+        <div class="detailsForBook">
+
+            <div class="imgOfBook">
+                <img mat-card-image id="bookIMG" src="../../../assets/book_cover_template.png">
+            </div>
+            
+            <div class="shortDecription">
+                <h1>{{bookDetails.title}}</h1>
+                <h2>Author:</h2>
+                <p>{{bookDetails.author}}</p>
+                <h2>Quantity:</h2>
+                <h3>{{bookDetails.quantity}}</h3>
+            </div>
+
+        </div>
+
+        <div class="actionsForBook">
+            <div *ngIf="authService.isUserLoggedIn; else notLogged">
+                <button mat-raised-button (click)="openDialog()" color="primary" id="BookItButton">
+                    <mat-icon>add_circle_outline</mat-icon>
+                    Book it
+                </button>
+            </div>
+            <ng-template #notLogged>
+                <span matTooltip="Log in in order to book" matTooltipClass="tooltip-red">
+                    <button mat-raised-button (click)="openDialog()" color="primary" id="BookItButton" disabled>
+                        <mat-icon>add_circle_outline</mat-icon>
+                        Book it
+                    </button>
+                </span>
+            </ng-template>
+            <div *ngIf="authService.userRole && authService.userRole < 3">
+                <button mat-raised-button (click)="openDialogBorrow()" color="primary" id="BorrowingButton">
+                    <mat-icon>add_circle_outline</mat-icon>
+                    Borrow
+                </button>
+            </div>
+        </div>
+
+        <div class="descriptionForBook">
+            
+            
+            
+       
+            <mat-list-item class="descriptionItem">
+                <h3 class="descriptionItemH3">Title: </h3>
+                <p class="descriptionItemP">{{bookDetails.title}}</p>
+            </mat-list-item >
+            <mat-divider style="margin-top:2%; margin-bottom: 1%;"></mat-divider>
+            <mat-list-item class="descriptionItem">
+                <h3 class="descriptionItemH3">Author: </h3>
+                <p class="descriptionItemP">{{bookDetails.author}}</p>
+            </mat-list-item>
+            <mat-divider style="margin-top:2%; margin-bottom: 1%;"></mat-divider>
+            <mat-list-item class="descriptionItem">
+                <h3 class="descriptionItemH3">Category: </h3>
+                <p class="descriptionItemP">{{bookDetails.category}}</p>
+            </mat-list-item>
+            <mat-divider style="margin-top:2%; margin-bottom: 1%;"></mat-divider>
+            <mat-list-item class="descriptionItem">
+                <h3 class="descriptionItemH3">Year of publishment: </h3>
+                <p class="descriptionItemP">{{bookDetails.yearOfPublishment}}</p>
+            </mat-list-item>
+            <mat-divider style="margin-top:2%; margin-bottom: 1%;"></mat-divider>
+            <mat-list-item class="descriptionItem">
+                <h3 class="descriptionItemH3">Publishing: </h3>
+                <p class="descriptionItemP">{{bookDetails.publishing}}</p>
+            </mat-list-item>
+            <mat-divider style="margin-top:2%; margin-bottom: 1%;"></mat-divider>
+
+
+ 
+           
+            <mat-list-item>
+                <h2 class="descriptionH3">Description: </h2>
+                <p class="descriptionP">{{bookDetails.description}}</p>
+            </mat-list-item>
+            
+         
+        </div>
+
+    </div>
+
+<div class="right"></div>
+
+
+</div>

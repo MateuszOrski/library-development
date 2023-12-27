@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+}
+
+.user-profile-component{
+    width: 15%;
+}
+
+.data{
+    width: 100%;
+}
+
+
+@media (max-width: 768px) 
+{
+ 
+    .container{
+        display: block;
+    }
+    .user-profile-component{
+        width: 100%;
+    }
+
+}

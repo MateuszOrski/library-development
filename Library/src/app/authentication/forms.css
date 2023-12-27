@@ -1,0 +1,10 @@
+.form{
+    margin:auto;
+    width:fit-content;
+    text-align: center;
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.mat-form-field{ width: 100%; }

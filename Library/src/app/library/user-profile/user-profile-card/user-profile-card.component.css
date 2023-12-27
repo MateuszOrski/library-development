@@ -1,0 +1,10 @@
+.mat-card {
+    text-align: center;
+    margin: 10px;
+}
+
+img{
+    width: 90%;
+    border-color: rgb(102, 104, 225);
+    border-style: groove;
+}

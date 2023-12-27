@@ -1,0 +1,49 @@
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput name="title" [(ngModel)]="book.title">
+    </mat-form-field>
+</p>
+
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select [(value)]="book.categoryID">
+            <mat-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</p>
+
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Author</mat-label>
+        <mat-select [(value)]="book.authorID">
+            <mat-option *ngFor="let author of authors" [value]="author.id">{{author.authorName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</p>
+
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Publishing House</mat-label>
+        <mat-select [(value)]="book.publishingHouseID">
+            <mat-option *ngFor="let pubHouse of publishingHouses" [value]="pubHouse.id">{{pubHouse.publishingName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</p>
+
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Year of publishment</mat-label>
+        <input matInput name="yearOfPublishment" [(ngModel)]="book.yearOfPublishment">
+    </mat-form-field>
+</p>
+
+<p>
+    <mat-form-field appearance="outline">
+        <mat-label>Quantity</mat-label>
+        <input matInput name="quantity" [(ngModel)]="book.quantity">
+    </mat-form-field>
+</p>
+
+<button mat-raised-button (click)="submitForm()">Submit</button>

@@ -1,0 +1,28 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+
+  input{
+    height: 35px;
+    width: 20%;
+    border-radius: 20px;
+    border-style: none;
+    outline: transparent;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  #home
+  {
+    display: flex;
+    border-radius: 10%;
+
+  }
+
+  #mainNavbar
+  {
+    width: 100%;
+    
+  }
+  

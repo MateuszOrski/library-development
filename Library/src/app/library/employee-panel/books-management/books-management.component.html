@@ -1,0 +1,61 @@
+<div>
+    <mat-accordion>
+
+        <form>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Add book
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+   
+                <app-book-form (submitFormEvent)="submitAddBook($event)"></app-book-form>
+    
+            </mat-expansion-panel>
+    
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Edit book
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                
+                <ng-select (search)="getSearchedBooks($event.term)" name="bookSelect" 
+                            [(ngModel)]="selectedBook" style="width:10%; min-width: 320px;">
+                    <ng-option *ngFor="let selection of userSelectionList" [value]="selection.id">
+                        {{selection.title}}
+                    </ng-option>
+                </ng-select>
+
+                <app-book-form [bookID]="selectedBook" (submitFormEvent)="submitEditBook($event)"></app-book-form>
+
+
+            </mat-expansion-panel>
+    
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Delete book
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <ng-select (search)="getSearchedBooks($event.term)" name="bookSelect"
+                            [(ngModel)]="selectedBook" style="width:10%; min-width: 320px;">
+                    <ng-option *ngFor="let selection of userSelectionList" [value]="selection.id">
+                        {{selection.title}}
+                    </ng-option>
+                </ng-select>
+
+                <div *ngIf="selectedBook==null;else notNull">
+                    <button mat-raised-button disabled>
+                        Delete
+                    </button>
+                </div>
+                <ng-template #notNull>
+                    <button mat-raised-button (click)="deleteBook()"> Delete</button>
+                </ng-template>
+            </mat-expansion-panel>
+        </form>
+
+    </mat-accordion>
+</div>

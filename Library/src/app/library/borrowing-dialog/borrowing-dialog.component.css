@@ -1,0 +1,116 @@
+#fetchUser
+{
+    visibility: visible;
+    text-align: center;
+}
+
+.content
+{
+    min-height: 500px;
+    min-width: 750px;
+    margin: 0%;
+}
+
+.title
+{
+
+    min-height: 10px;
+    width: 90%;
+   padding: 1%;
+    text-align: center;
+    padding-left: 5%;
+}
+
+.user
+{
+    min-height: 170px;
+    width: 90%;
+    padding: 1%;
+    padding-left: 5%;
+}
+
+.book
+{
+  
+    min-height: 150px;
+    width: 90%;
+    padding: 1%;
+    padding-left: 5%;
+}
+
+.rowUser
+{
+   height: 100%;
+   width: 50%;
+   float: left;
+}
+.LabelDataP
+{
+
+    width: 80%;
+    text-align: left;
+   
+  padding-left: 4px;
+}
+
+.LabelDataH3
+{
+    width: 20%;
+
+    text-align: left;
+    display: inline;
+}
+.approvement
+{
+    text-align: center;
+    width: 90%;
+    padding: 1%;
+    padding-bottom: 3%;
+}
+
+#buttonCancel
+{
+    margin-right: 20%;
+}
+
+#buttonAddNew
+{
+    margin-left: 20%;
+  
+}
+
+@media (min-width: 320px) and (max-width: 920px) 
+{
+    .content
+{
+    margin: 0%;
+    min-width: 320px;
+}
+#buttonCancel
+{
+ margin: 0%;
+    width: 80%;
+    margin-top: 5%;
+   
+    margin-left: 12%;
+}
+
+#buttonAddNew
+{
+    margin: 0%;
+    margin-top: 5%;
+    width: 80%;
+    margin-left: 12%;
+}
+
+.mat-dialog-container
+{
+    margin: 0%;
+    padding: 0%;
+}
+.mat-dialog-container
+{
+    margin: 0%;
+    padding: 0%;
+}
+}

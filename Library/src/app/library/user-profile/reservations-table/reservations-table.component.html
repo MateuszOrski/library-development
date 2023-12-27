@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="section">
+        <mat-card-title>Current Reservations</mat-card-title>
+        <div *ngIf="userCurrentReservations && userCurrentReservations.length!=0; else nothingToShow">
+            <table mat-table [dataSource]="userCurrentReservations" style="width: 100%;">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef>Title</th>
+                    <td mat-cell *matCellDef="let element">{{element.title}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="author">
+                    <th id="author" mat-header-cell *matHeaderCellDef>Author</th>
+                    <td id="author" mat-cell *matCellDef="let element">{{element.author}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="bookingDate">
+                    <th mat-header-cell *matHeaderCellDef>Date</th>
+                    <td mat-cell *matCellDef="let element">{{element.bookingDate | date}}</td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="keyArray"></tr>
+                <tr (click) = "selectRow(row)"
+                [class.clicked-row]="selectedRow == row"
+                mat-row *matRowDef="let row; columns: keyArray;"></tr>
+            </table>
+            <span *ngIf="selectedRow; else notSelected">
+                <button style="margin-top: 30px;" mat-raised-button 
+                (click)="onDeleteReservationButtonClick(selectedRow.id)">Remove selected</button>
+            </span>
+            <ng-template #notSelected>
+                <button style="margin-top: 30px;" mat-raised-button disabled>Remove selected</button>
+            </ng-template>
+        </div>
+    </div>
+    
+<ng-template #nothingToShow>
+    <div>
+        Nothing to show.
+    </div>
+</ng-template>

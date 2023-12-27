@@ -1,0 +1,45 @@
+<mat-card class="form">
+    <div *ngIf="registrationSuccesful == false;else registration_succesful_panel">
+      <form [formGroup]="loginForm">
+
+        <div class="header">Register</div>
+
+        <mat-form-field>
+            <input matInput id="username" placeholder="Username" autocomplete="off" formControlName="username" required>
+          </mat-form-field>
+      
+        <mat-form-field>
+          <input matInput type="email" id="email" placeholder="Email" autocomplete="off" formControlName="email" required>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <input matInput id="firstName" placeholder="First Name" autocomplete="off" formControlName="fisrtName" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput id="lastName" placeholder="Last Name" autocomplete="off" formControlName="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="password" id="password" placeholder="Password" autocomplete="off" formControlName="password" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [errorStateMatcher]="matcher" type="password" id="confirmpassword" placeholder="Retype Password" autocomplete="off" formControlName="confirmPassword" required>
+            <mat-error *ngIf="loginForm.hasError('notSame')">Passwords do not match</mat-error>
+        </mat-form-field>
+        <div class="actions">
+          <button mat-flat-button color="primary" type="submit" (click)="register()" [disabled]="!loginForm.valid">Register</button>
+        </div>
+      
+      </form>
+    </div>
+    <ng-template #registration_succesful_panel>
+    <div *ngIf="registrationSuccesful == true">
+      Registration succesful!
+      <div>
+        <button routerLinkActive="active" [routerLink]="['/login']" mat-stroked-button type="button">Login</button>
+      </div>
+    </div>
+  </ng-template>
+</mat-card>

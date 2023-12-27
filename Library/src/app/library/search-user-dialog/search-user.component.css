@@ -1,0 +1,64 @@
+.content
+{
+    height: 600px;
+    min-width: 800px;
+
+}
+.search
+{
+    min-height: 40px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    background-color: #3700B3;
+    text-align: center;
+}
+.searchInput
+{
+   
+    height: 20px;
+   margin-top: 1%;
+    min-width: 250px;
+    margin-bottom: 1%;
+    border-radius: 5,10;
+
+}
+.cancel
+{
+    padding-top: 1%;
+    padding-right: 1%;
+    float: right;
+    font-size: 25px;
+}
+
+.mat-elevation-z8{
+    width: 100%;
+}
+
+
+@media (min-width: 320px) and (max-width: 920px) 
+{
+    .content
+    {
+
+        min-width: 320px;
+    }
+
+    .search
+{
+    min-height: 40px;
+  
+}
+.searchInput
+{
+    min-width: 150px;
+    
+}
+
+#email
+{
+    display: none;
+}
+
+}

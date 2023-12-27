@@ -1,0 +1,26 @@
+mat-card {
+    text-align: center;
+    margin: 5px;
+    width: 200px;
+    min-height: 300px;
+    
+    display: flex;
+
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    align-content: space-around;
+
+
+}
+
+mat-card:hover{
+  cursor: pointer;
+  background-color:gainsboro;
+}
+
+mat-card-header {
+    display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+

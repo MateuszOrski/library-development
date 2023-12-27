@@ -1,0 +1,236 @@
+
+.container
+{
+    display: flex;
+}
+
+.tooltip-red {
+    background: #b71c1c;
+}
+
+.left, .right
+{
+    min-height: 1000px;
+    height: auto;
+    width: 10%;
+}
+
+.mid
+{
+    min-height: 1000px;
+    height: auto;
+    width: 80%;
+    overflow-wrap: break-word;
+    
+}
+
+
+
+.detailsForBook
+{
+    min-height: 600px;
+    height: auto;
+    width: 70%;
+
+    float: left;
+
+}
+
+.actionsForBook
+{
+    min-height: 600px;
+    height: auto;
+    width: 30%;
+   
+    float: left;
+
+}
+
+.descriptionForBook
+{
+    min-height: 700px;
+    
+    width: 100%;
+   
+    float: left;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.imgOfBook
+{
+   padding-top: 10%;
+    width: 60%;
+    justify-content: center;
+    align-items: stretch;
+    float: left;
+}
+
+.shortDecription
+{
+    padding-top: 10%;
+    width: 40%;
+    justify-content: center;
+    align-items: stretch;
+    float: left;
+    
+}
+
+#BorrowingButton, #BookItButton
+{
+    min-height: 50px;
+    width: 60%;
+    margin-top: 25%;
+    float: none;
+    justify-content: center;
+    
+}
+
+
+
+.descriptionItemP
+{
+
+    width: 80%;
+    text-align: left;
+  display: inline;
+  padding-left: 4px;
+}
+
+.descriptionItemH3
+{
+    width: 20%;
+
+    text-align: left;
+    display: inline;
+}
+
+.descriptionH3
+{
+    padding-top: 5%;
+    width: 100%;
+    text-align: left;
+}
+
+.descriptionP
+{
+   
+    width: 100%;
+    text-align: left;
+    
+ 
+}
+
+
+@media (min-width: 320px) and (max-width: 920px) {
+
+.left, .right
+{
+display: none;
+}
+
+.mid
+{
+    width: 100%;
+}
+.detailsForBook
+{
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+.actionsForBook
+{
+    min-height: 200px;
+    height: auto;
+    width: 100%;
+
+}
+
+.descriptionForBook
+{
+    min-height: 700px;
+    
+    width: 100%;
+    display: inline;
+}
+
+.imgOfBook
+{
+    
+   padding-top: 5%;
+    width: 65%;
+  
+    
+    display: inline;
+    
+}
+
+#bookIMG
+{
+   
+    width: 350px;
+    height: 250px;
+}
+.shortDecription
+{
+   
+    padding-top: 5%;
+    width: 35%;
+    
+    text-align: left;
+    display: inline;
+    
+}
+
+#BorrowingButton, #BookItButton
+{
+    
+    margin-top: 5%;
+    margin-left: 20%;
+    
+}
+
+
+
+.descriptionItemP
+{
+
+    width: 80%;
+    text-align: left;
+  display: inline;
+  padding-left: 4px;
+  overflow-wrap: break-word;
+}
+
+.descriptionItemH3
+{
+    width: 20%;
+
+    text-align: left;
+    display: inline;
+    overflow-wrap: break-word;
+}
+
+.descriptionH3
+{
+    padding-top: 5%;
+    width: 100%;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.descriptionP
+{
+   
+    width: 100%;
+    text-align: left;
+    overflow-wrap: break-word;
+    
+}
+
+
+
+} 

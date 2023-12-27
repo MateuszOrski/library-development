@@ -1,0 +1,67 @@
+<div class="content">
+    <div class="searchUser">
+        <div  id="fetchUser">
+            <button mat-raised-button (click)="fetchUserData()" color="primary" id="fetchUserButton">
+                <mat-icon>search</mat-icon>
+                Search user
+            </button>
+        </div>
+        <div  id="userData">
+
+            <tr>
+                <td>Login </td>
+                <td>First name</td>
+                <td>Last name</td>
+                <td>E-mail</td>
+                <td id="isActive">Account status</td>
+                <td id="role">Role</td>
+           
+            </tr>
+            <tr>
+                <td>{{userProfile.login}} </td>
+                <td> {{userProfile.firstName}} </td>
+                <td> {{userProfile.lastName}} </td>
+                <td>{{userProfile.email}}</td>
+                <td [innerHTML] = "userProfile.isActive | accountStatus"></td>
+                <td>{{userProfile.role}}</td>
+              
+            </tr>
+        </div>
+    </div>
+    <mat-divider style="margin-top:2%; margin-bottom: 2%; border-top-color:black; border-width: 5%; "></mat-divider>
+
+    <div class="currentBorrowings">
+        <table  mat-table [dataSource]="userCurrentBorrowings" class="borrowingsTable">
+
+            <ng-container matColumnDef="ID">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef>Title</th>
+              <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+          
+
+            <ng-container matColumnDef="author">
+              <th id="author" mat-header-cell *matHeaderCellDef>Author</th>
+              <td id="author" mat-cell *matCellDef="let element"> {{element.author}} </td>
+            </ng-container>
+          
+        
+            <ng-container matColumnDef="dateOfBorrowing">
+              <th mat-header-cell *matHeaderCellDef>Date of borrow</th>
+              <td  mat-cell *matCellDef="let element"> {{element.dateOfBorrowing | date}} </td>
+            </ng-container>
+          
+
+            
+          
+            <tr mat-header-row *matHeaderRowDef="['ID','title', 'author', 'dateOfBorrowing']"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['ID','title', 'author', 'dateOfBorrowing'];" (click)="choice(row)" class="tdBorrowings"></tr>
+          </table>
+
+    </div>
+
+</div>  

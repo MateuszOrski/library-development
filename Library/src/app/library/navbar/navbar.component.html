@@ -1,0 +1,37 @@
+<mat-toolbar #mainNavbar color="primary">
+  <button mat-button>
+    <span id="home" routerLinkActive="active" routerLink="/home">
+      <mat-icon style="padding-top: 4% ;">home</mat-icon>
+      <h1>
+        Library
+      </h1>
+
+    </span>
+  </button>
+
+
+  <span class="spacer"></span>
+
+  <input *ngIf="homeService.isHomePageActive == true" type="text" placeholder="Search" (input)="searchInput($event)">
+  <mat-icon *ngIf="homeService.isHomePageActive == true" style="margin-left:1% ;">search</mat-icon>
+  <span class="spacer"></span>
+  <button *ngIf="authService.isUserLoggedIn == false;else loggedIn" mat-button routerLinkActive="true"
+    [routerLink]="['/login']">Login</button>
+  <ng-template #loggedIn>
+    <button #loggedIn mat-button [matMenuTriggerFor]="menu">{{authService.username}}</button>
+    <mat-menu #menu="matMenu" style="float: left;display: block;">
+      <button mat-button style="width: 100%" [routerLink]="'user'">Profile</button>
+      <div *ngIf="authService.userRole < 3">
+        <button mat-button style="width: 100%;" [routerLink]="'employee'">Employee</button>
+        <button mat-button style="width: 100%;" [routerLink]="'employee/books'">Manage books</button>
+        <button mat-button style="width: 100%;" [routerLink]="'employee/deletereservations'">Delete
+          reservations</button>
+        <button mat-button style="width: 100%;" [routerLink]="'employee/returnbooks'">Return books</button>
+      </div>
+      <div *ngIf="authService.userRole == 1">
+        <button mat-button style="width: 100%" [routerLink]="'admin'">Admin</button>
+      </div>
+      <button mat-button style="width: 100%" (click)="logout()">Logout</button>
+    </mat-menu>
+  </ng-template>
+</mat-toolbar>

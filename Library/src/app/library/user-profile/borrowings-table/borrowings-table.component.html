@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="section">
+        <mat-card-title>Current Borrowings</mat-card-title>
+        <div *ngIf="userCurrentBorrowings && userCurrentBorrowings.length!=0; else nothingToShow">
+            <table mat-table [dataSource]="userCurrentBorrowings" style="width: 100% !important;">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef>Title</th>
+                    <td mat-cell *matCellDef="let element">{{element.title}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="author">
+                    <th id="author" mat-header-cell *matHeaderCellDef>Author</th>
+                    <td id="author" mat-cell *matCellDef="let element">{{element.author}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="dateOfBorrowing">
+                    <th mat-header-cell *matHeaderCellDef>Borrowing Date</th>
+                    <td mat-cell *matCellDef="let element">{{element.dateOfBorrowing | date}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="dateOfReturning">
+                    <th mat-header-cell *matHeaderCellDef>Returning Date</th>
+                    <td mat-cell *matCellDef="let element">{{element.dateOfReturning}}</td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="keyArray"></tr>
+                <tr mat-row *matRowDef="let row; columns: keyArray;"></tr>
+            </table>
+        </div>
+    </div>
+    <div class="section">
+        <mat-card-title>History of Borrowings</mat-card-title>
+        <div *ngIf="userHistoryOfBorrowings && userHistoryOfBorrowings.length!=0; else nothingToShow">
+            <table mat-table [dataSource]="userHistoryOfBorrowings" style="width: 100% !important;">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef>Title</th>
+                    <td mat-cell *matCellDef="let element">{{element.title}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="author">
+                    <th id="author" mat-header-cell *matHeaderCellDef>Author</th>
+                    <td id="author" mat-cell *matCellDef="let element">{{element.author}}</td>
+                </ng-container>
+    
+                <ng-container matColumnDef="dateOfBorrowing">
+                    <th mat-header-cell *matHeaderCellDef>Borrowing Date</th>
+                    <td mat-cell *matCellDef="let element">{{element.dateOfBorrowing | date}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="dateOfReturning">
+                    <th mat-header-cell *matHeaderCellDef>Returning Date</th>
+                    <td mat-cell *matCellDef="let element">{{element.dateOfReturning | date}}</td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="keyArray"></tr>
+                <tr mat-row *matRowDef="let row; columns: keyArray;"></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #nothingToShow>
+    <div>
+        Nothing to show.
+    </div>
+</ng-template>
+

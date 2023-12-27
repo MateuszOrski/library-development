@@ -1,0 +1,42 @@
+<div class="content">
+    <div class="search">
+        <input class="searchInput" type="text" placeholder="Search" (input)="searchInput($event)">
+        <mat-icon class="cancel" (click)="cancel()">cancel</mat-icon>
+    </div>
+    <div class="data">
+   
+          
+
+
+                    <table mat-table [dataSource]="users" class="mat-elevation-z8">
+
+                        <ng-container matColumnDef="Login">
+                          <th mat-header-cell *matHeaderCellDef>Login</th>
+                          <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+                        </ng-container>
+                      
+            
+                        <ng-container matColumnDef="FristName">
+                          <th mat-header-cell *matHeaderCellDef>FristName</th>
+                          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+                        </ng-container>
+                      
+                    
+                        <ng-container matColumnDef="LastName">
+                          <th mat-header-cell *matHeaderCellDef>LastName</th>
+                          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+                        </ng-container>
+                      
+       
+                        <ng-container id="email" matColumnDef="Email">
+                          <th id="email" mat-header-cell *matHeaderCellDef>Email</th>
+                          <td id="email" mat-cell *matCellDef="let element"> {{element.email}} </td>
+                        </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="['Login', 'FristName', 'LastName', 'Email']"></tr>
+                        <tr mat-row *matRowDef="let row; columns: ['Login', 'FristName', 'LastName', 'Email'];" (click)="choice(row)"></tr>
+                      </table>
+
+           
+     </div>
+</div>

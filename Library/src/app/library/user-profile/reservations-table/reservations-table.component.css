@@ -1,0 +1,20 @@
+.container{
+    margin: 20px;
+    width: 90%;
+}
+
+.section{
+    margin: 20px;
+}
+
+.clicked-row{
+    background-color: aliceblue;
+}
+
+@media (max-width: 768px) 
+{
+    #author
+    {
+        display: none;
+    }
+}

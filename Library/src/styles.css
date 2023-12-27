@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.green-snackbar {
+    background-color: #333333;
+    color: rgb(65, 252, 134);
+}
+.green-snackbar button {
+    background-color: #333333;
+    color: rgb(65, 252, 134);
+    border: none;
+}
+.red-snackbar {
+    background: #333333;
+    color: #FF3131;
+}
+.red-snackbar button {
+    background: #333333;
+    color: #FF3131 !important;
+    border: none;
+}
+
+.custom-dialog-container .mat-dialog-container {
+    margin: 0%;
+    padding: 0%;
+}
+.cdk-global-overlay-wrapper {
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+    overflow: auto;
+    pointer-events: auto;  
+  }
+
+
+.color-green{
+    color: green;
+}
+
+.color-red{
+    color: red;
+}

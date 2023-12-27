@@ -1,0 +1,94 @@
+<div class="content">
+    <div class="title">
+        <h1>New Borrowing</h1>
+    </div>  
+    <mat-divider style="margin-top:2%; margin-bottom: 2%; border-top-color:black; border-width: 5%;"></mat-divider>
+    <div class="user">
+        <div *ngIf="dataIsDownload!=true" id="fetchUser">
+            <button mat-raised-button (click)="fetchUserData()" color="primary" id="fetchUserButton">
+                <mat-icon>search</mat-icon>
+                Search user
+            </button>
+        </div>
+        <div *ngIf="dataIsDownload==true" id="userData">
+            <div class="rowUser">
+                <label class="LabelData">
+                    <h3 class="LabelDataH3">Login:</h3>
+                    <p class="LabelDataP">{{userProfile.login}}</p>
+                  
+                </label>
+                <label class="LabelData">
+                    <h3 class="LabelDataH3">First name</h3>
+                    <p class="LabelDataP">{{userProfile.firstName}}</p>
+                
+                </label>
+                <label class="LabelData">
+                    <h3 class="LabelDataH3">Last name</h3>
+                    <p class="LabelDataP">{{userProfile.lastName}}</p>
+                 
+                </label>
+            </div>
+            <div class="rowUser">
+                <label class="LabelData">
+                    <h3 class="LabelDataH3">E-mail</h3>
+                    <p class="LabelDataP">{{userProfile.email}}</p>
+            
+                </label>
+                <label class="LabelData">
+                    <h3 class="LabelDataH3">Account status:</h3>
+                    <p class="LabelDataP">{{userProfile.isActive}}</p>
+              
+                </label>
+                <label class="LabelData">
+                    <h3 class="LabelDataH3">User role:</h3>
+                    <p class="LabelDataP">{{userProfile.role}}</p>
+            
+                </label>
+            </div>
+        </div>
+    </div>
+    <mat-divider style="margin-top:2%; margin-bottom: 2%; border-top-color:black; border-width: 5%; "></mat-divider>
+    <div class="book">
+        <div class="rowBook">
+            <label class="LabelData">
+                <h3 class="LabelDataH3">Title:</h3>
+                <p class="LabelDataP">{{bookDetails.title}}</p>
+              
+            </label>
+            <label class="LabelData">
+                <h3 class="LabelDataH3">Author:</h3>
+                <p class="LabelDataP">{{bookDetails.author}}</p>
+            
+            </label>
+            <label class="LabelData">
+               
+                    <h3 class="LabelDataH3">Category:</h3>
+                    <p class="LabelDataP">{{bookDetails.category}}</p>
+              
+              
+             
+            </label>
+        </div>
+       
+   
+
+    </div>
+    <mat-divider style="margin-top:2%; margin-bottom: 2%; border-top-color:black; border-width: 5%;"></mat-divider>
+    <div class="approvement">
+
+        <button mat-raised-button (click)="onNoClick()" color="primary" id="buttonCancel">
+            <mat-icon>cancel</mat-icon>
+            Cancel
+        </button>
+
+        <button mat-raised-button (click)="addNewBorrowing()" color="primary" id="buttonAddNew">
+            <mat-icon>add_circle_outline</mat-icon>
+            Add new borrowing
+        </button>
+       
+
+
+
+    </div>
+
+</div>

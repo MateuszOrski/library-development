@@ -1,0 +1,13 @@
+*.angular
+
+node_modules
+
+.vs
+
+.vscode
+
+obj
+
+bin
+
+Library/src/todo

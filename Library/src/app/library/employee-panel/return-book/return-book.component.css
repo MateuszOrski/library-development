@@ -1,0 +1,78 @@
+.content
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0%;
+    word-wrap: break-word;
+}
+#fetchUserButton
+{
+    width: 100%;
+    text-align: center;
+}
+
+.searchUser
+{
+  
+    height: 100px;
+}
+
+.currentBorrowings
+{
+    height: 500px;
+}
+
+.rowUser
+{
+    display: flex;
+}
+.LabelData
+{
+    display: flex;
+}
+tr
+{
+ 
+    width: 100%;
+    margin: 2%;
+}
+td
+{   
+    width: 19%;
+
+
+}
+#userData
+{
+    padding-top: 1%;
+}
+
+.borrowingsTable
+{
+    width: 100%;
+    height: 400;
+}
+
+.tdBorrowings:hover
+{
+    background-color:aliceblue ;
+}
+
+
+@media (min-width: 320px) and (max-width: 920px) 
+{
+#author
+{
+    display: none;
+}
+#role
+{
+    display: none;
+  
+}
+#isActive
+{
+    display: none;
+}
+}

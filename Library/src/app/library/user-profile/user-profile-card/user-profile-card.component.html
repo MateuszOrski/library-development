@@ -1,0 +1,24 @@
+<mat-card>
+    <div *ngIf="isDataLoaded==false;else loaded">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <ng-template #loaded>
+        <img src="../../../../assets/user_img_template.jpg">
+    <mat-card-title>
+        {{userData.login}}
+    </mat-card-title>
+    <mat-card-subtitle>
+        {{userData.firstName}} {{userData.lastName}}
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+        {{userData.email}}
+    </mat-card-subtitle>
+    <mat-card-content>
+        {{userData.role}}
+    </mat-card-content>
+    <mat-card-footer>
+        <div [outerHTML] = "userData.isActive | accountStatus"></div>
+    </mat-card-footer>
+    </ng-template>
+</mat-card>
